@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Title</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<meta name="generator" content="grunt-shower-markdown">
+	<link rel="stylesheet" href="themes/ribbon/styles/screen.css">
+	<link rel="stylesheet" href="themes/ribbon/styles/print.css" media="print">
+	
+		<link rel="stylesheet" href="test/src/styles.css?1351715000000">
+	
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Title</h1>
+<p><a href="http://sapegin.me">Author</a>
+
+
+</p>
+
+	</header>
+	
+	
+	<section class="slide shout cover" id="Cover"><div>
+		<h2>Title</h2>
+<h3>Subtitle</h3>
+<img src="pictures/pic.png" alt="Image">
+
+
+
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Simple list</h2>
+<p>Some words.
+
+</p>
+<ul>
+<li>First.</li>
+<li>Second.<ul>
+<li>One</li>
+<li>Two</li>
+</ul>
+</li>
+<li>Third.</li>
+</ul>
+<h2>Delayed list</h2>
+<ul>
+<li>First.</li>
+<li class="next">Second.</li>
+<li class="next">Third.</li>
+</ul>
+
+	</div></section>
+	
+	<section class="slide smallcode" ><div>
+		<h2>Code</h2>
+<pre><code class="language-javascript">module.exports = function(grunt) {</code>
+<code>    grunt.initConfig({</code>
+<code>        concat: {</code>
+<code>            main: {</code>
+<code>                src: &#39;src/*.js&#39;,</code>
+<code>                dest: &#39;build/scripts.js&#39;</code>
+<code>            }</code>
+<code>        },</code>
+<code>        min: {</code>
+<code>            main: {</code>
+<code>                src: &#39;&lt;config:concat.main.dest&gt;&#39;,</code>
+<code>                dest: &#39;build/scripts.min.js&#39;</code>
+<code>            }</code>
+<code>        }</code>
+<code>    });</code>
+<code>    grunt.registerTask(&#39;default&#39;, &#39;concat min&#39;);</code>
+<code>};</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Code with marks</h2>
+<pre><code class="language-javascript">concat: {</code>
+<code>    <mark>main: {</mark></code>
+<code>        text: <mark class="important">&#39;Hello world&#39;</mark></code>
+<code>    <mark>}</mark></code>
+<code>}</code></pre>
+
+	</div></section>
+	
+	
+	<div class="progress"><div></div></div>
+	<script src="scripts/script.js"></script>
+
+	
+
+	<!-- Shower: © 2010–2012 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>

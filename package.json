@@ -1,0 +1,35 @@
+{
+  "name": "grunt-shower-markdown",
+  "description": "Grunt task that generates Shower presentations from Markdown source.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/sapegin/grunt-shower-markdown",
+  "author": {
+    "name": "Artem Sapegin",
+    "url": "http://sapegin.me/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sapegin/grunt-shower-markdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sapegin/grunt-shower-markdown/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/sapegin/grunt-shower-markdown/blob/master/License.md"
+    }
+  ],
+  "main": "tasks/shower-markdown.js",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "marked": "0.2.x"
+  },
+  "keywords": [
+    "gruntplugin",
+    "shower",
+    "markdown"
+  ]
+}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="<%= lang %>">
+<head>
+	<title><%= title %></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<meta name="generator" content="grunt-shower-markdown">
+	<link rel="stylesheet" href="<%= theme %>/styles/screen.css">
+	<link rel="stylesheet" href="<%= theme %>/styles/print.css" media="print">
+	<% for (var styleIdx in styles) { %>
+		<link rel="stylesheet" href="<%= styles[styleIdx] %>">
+	<% } %>
+</head>
+<body class="list">
+	<header class="caption">
+		<%= caption %>
+	</header>
+	
+	<% for (var slideIdx in slides) { var slide = slides[slideIdx]; %>
+	<section class="slide <%= slide.classes.join(' ') %>" <% if (slide.id) { %>id="<%= slide.id %>"<% } %>><div>
+		<%= slide.html %>
+	</div></section>
+	<% } %>
+	
+	<% if (progress) { %><div class="progress"><div></div></div><% } %>
+	<script src="scripts/script.js"></script>
+
+	<% for (var scriptIdx in scripts) { %>
+		<script src="<%= scripts[scriptIdx] %>"></script>
+	<% } %>
+
+	<!-- Shower: © 2010–<%= grunt.template.today('yyyy') %> Vadim Makeev — pepelsbey.net -->
+</body>
+</html>
