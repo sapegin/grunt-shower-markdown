@@ -51,6 +51,9 @@ List of JavaScript files specific to your presentation.
 
 Hides progress bar when `false`.
 
+### [footer] {string}
+
+Any HTML to put before `</body>`.
 
 ## Config Example
 

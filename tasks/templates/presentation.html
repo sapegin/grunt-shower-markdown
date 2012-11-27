@@ -15,19 +15,21 @@
 	<header class="caption">
 		<%= caption %>
 	</header>
-	
+
 	<% for (var slideIdx in slides) { var slide = slides[slideIdx]; %>
 	<section class="slide <%= slide.classes.join(' ') %>" <% if (slide.id) { %>id="<%= slide.id %>"<% } %>><div>
 		<%= slide.html %>
 	</div></section>
 	<% } %>
-	
+
 	<% if (progress) { %><div class="progress"><div></div></div><% } %>
 	<script src="scripts/script.js"></script>
 
 	<% for (var scriptIdx in scripts) { %>
 		<script src="<%= scripts[scriptIdx] %>"></script>
 	<% } %>
+
+	<%= footer %>
 
 	<!-- Shower: © 2010–<%= grunt.template.today('yyyy') %> Vadim Makeev — pepelsbey.net -->
 </body>

@@ -69,6 +69,7 @@ module.exports = function(grunt) {
 			styles: assets(options.styles),
 			scripts: assets(options.scripts),
 			progress: options.progress !== false,
+			footer: options.footer || '',
 			caption: caption,
 			slides: slides
 		};
