@@ -2,19 +2,21 @@
 
 ## Installation
 
+This plugin requires Grunt 0.4.
+
 Install `grunt-shower-markdown`:
 
 ```
-npm install grunt-shower-markdown
+npm install grunt-shower-markdown --save-dev
 ```
 
-Add somewhere in your `grunt.js`:
+Add somewhere in your `Gruntfile.js`:
 
 ```javascript
 grunt.loadNpmTasks('grunt-shower-markdown');
 ```
 
-Add a section named `shower` into your `grunt.js` file. See Parameters section below for details.
+Add a section named `shower` into your `Gruntfile.js` file. See Parameters section below for details.
 
 
 ## Parameters
@@ -146,6 +148,13 @@ You can highlight important parts of presentation using `@@text@@` (important) a
 	}
 }
 ```
+
+## Release History
+
+### 2013-02-18 v0.1.0
+
+* Grunt 0.4 support.
+
 
 ---
 

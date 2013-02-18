@@ -75,7 +75,7 @@ module.exports = function(grunt) {
 		};
 		var templateFile = path.join(__dirname, 'templates/presentation.html'),
 			template = fs.readFileSync(templateFile, 'utf8'),
-			html = grunt.template.process(template, context);
+			html = grunt.template.process(template, {data: context});
 
 		var dest = options.dest ? options.dest : target + '.html';
 		grunt.file.write(dest, html);
@@ -94,7 +94,7 @@ module.exports = function(grunt) {
 	function assets(files) {
 		if (!files) return [];
 
-		files = grunt.file.expandFiles(files);
+		files = grunt.file.expand(files);
 		files.forEach(function(file, fileIdx) {
 			files[fileIdx] = file + '?' + fs.statSync(file).mtime.getTime();
 		});
