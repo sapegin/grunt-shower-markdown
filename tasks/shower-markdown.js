@@ -10,7 +10,8 @@ module.exports = function(grunt) {
 
 	var fs = require('fs'),
 		path = require('path'),
-		marked = require('marked');
+		marked = require('marked'),
+		_ = grunt.util._;
 
 	grunt.registerMultiTask('shower', 'Generates Shower presentations from Markdown source', function() {
 		var target = this.target,
@@ -98,6 +99,7 @@ module.exports = function(grunt) {
 	function assets(files) {
 		if (!files) return [];
 
+		if (!_.isArray(files)) files = [files];
 		files.forEach(function(file, fileIdx) {
 			if (!fs.existsSync(file)) {
 				grunt.warn('Asset file "' + file + '" not found.');
