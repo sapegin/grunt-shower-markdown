@@ -38,13 +38,9 @@ module.exports = function(grunt) {
 			}
 			source = source.substring(firstLineLength);  // Remove first line
 
-			// Prepare
-			source = source
-				.replace(/(\n[\-*])\?/g, '$1 ?')  // Delayed lists
-			;
-
 			// Slide content
 			source = source
+				.replace(/(\n[\-*])\?/g, '$1 ?')  // Delayed lists
 				.replace(/!\[(.*?)\]\((.*?)\)((?: \.\w+)+)/g, _customImg)  // Images with custom classes
 			;
 			var html = marked(source);
