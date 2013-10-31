@@ -44,6 +44,9 @@ module.exports = function(grunt) {
 			;
 
 			// Slide content
+			source = source
+				.replace(/!\[(.*?)\]\((.*?)\)((?: \.\w+)+)/g, _customImg)  // Images with custom classes
+			;
 			var html = marked(source);
 			html = html
 				.replace(/@@@(.*?)@@@/g, '<mark class="important">$1</mark>')
@@ -86,6 +89,11 @@ module.exports = function(grunt) {
 
 	function _addCodeTags(m, code) {
 		return '<pre>' + code.replace(/\n/g, '</code>\n<code>') + '</pre>';
+	}
+
+	function _customImg(m, alt, src, classes) {
+		classes = classes.replace(/\W+/g, ' ');
+		return '<img src="' + src + '" alt="' + alt + '" class="' + classes + '">';
 	}
 
 	/**
