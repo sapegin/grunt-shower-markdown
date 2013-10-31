@@ -102,10 +102,14 @@ module.exports = function(grunt) {
 	function assets(files) {
 		if (!files) return [];
 
-		files = grunt.file.expand(files);
 		files.forEach(function(file, fileIdx) {
+			if (!fs.existsSync(file)) {
+				grunt.warn('Asset file "' + file + '" not found.');
+				return;
+			}
 			files[fileIdx] = file + '?' + fs.statSync(file).mtime.getTime();
 		});
+
 		return files;
 	}
 
