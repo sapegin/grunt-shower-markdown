@@ -89,7 +89,7 @@ module.exports = function(grunt) {
 	}
 
 	function _customImg(m, alt, src, classes) {
-		classes = classes.replace(/\W+/g, ' ');
+		classes = _.trim(classes.replace(/\W+/g, ' '));
 		return '<img src="' + src + '" alt="' + alt + '" class="' + classes + '">';
 	}
 
