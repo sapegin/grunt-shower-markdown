@@ -4,7 +4,15 @@
 
 This plugin requires Grunt 0.4.
 
-Install `grunt-shower-markdown`:
+### 1. Download Shower
+
+You need just one file. [Download it](https://raw.github.com/shower/shower/master/shower.min.js) and save as `shower/shower.min.js`.
+
+### 2. Download theme
+
+Download one of [Shower themes](https://github.com/shower/shower/tree/master/themes).
+
+### 3. Install grunt-shower-markdown
 
 ```
 npm install grunt-shower-markdown --save-dev
@@ -83,7 +91,7 @@ module.exports = function(grunt) {
 	
 	grunt.loadNpmTasks('grunt-shower-markdown');
 	
-	grunt.registerTask('default', 'shower');
+	grunt.registerTask('default', ['shower']);
 };		
 ```
 
@@ -125,7 +133,7 @@ module.exports = function(grunt) {
 
 ## Markdown extensions
 
-grunt-shower-markdown uses [GitHub flavored Markdown](http://github.github.com/github-flavored-markdown/) with some extenstions.
+You can use [GitHub flavored Markdown](http://github.github.com/github-flavored-markdown/) with some extenstions.
 
 ### Delayed lists
 
@@ -148,6 +156,13 @@ You can highlight important parts of presentation using `@@text@@` (important) a
 	}
 }
 ```
+
+### Images with classes
+
+```
+![](pictures/pony.png) .place .r .b
+```
+
 
 ## Release History
 
