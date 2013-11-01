@@ -29,41 +29,60 @@ Add a section named `shower` into your `Gruntfile.js` file. See Parameters secti
 
 ## Parameters
 
-### [title] {string} (default: first line of source file)
+### title
 
-Title of presentation (used in `<title>` tag).
+Type: `string`, default: first line of source file.
 
-### [src] {string} (default: `<target>.md`)
+Presentation title (used in `<title>` tag).
 
-Path of source Markdown file.
+### src
 
-### [dest] {string} (default: `<target>.html`)
+Type: `string`, default: `<target>.md`.
 
-Path of result HTML file.
+Path of Markdown source file.
 
-### [lang] {string} (default: `en`)
+### dest
 
-Language of presentation.
+Type: `string`, default: `<target>.html`.
 
-### [theme] {string} (default: `themes/ribbon`)
+Path of destination HTML file.
+
+### lang
+
+Type: `string`, default: `en`.
+
+Presentation language.
+
+### theme
+
+Type: `string`, default: `themes/ribbon`.
 
 Path where theme of presentation is located.
 
-### [styles] {array|string}
+### styles
+
+Type: `array|string`, optional.
 
 List of CSS files specific to your presentation.
 
-### [scripts] {array|string}
+### scripts
+
+Type: `array|string`, optional.
 
 List of JavaScript files specific to your presentation.
 
-### [progress] {string} (default: `true`)
+### progress
+
+Type: `string`, default: `true`.
 
 Hides progress bar when `false`.
 
-### [footer] {string}
+### footer
 
-Any HTML to put before `</body>`.
+Type: `string`, optional.
+
+Any HTML to put before `</body>`. Google Analytics for example.
+
 
 ## Config Example
 
@@ -107,6 +126,8 @@ module.exports = function(grunt) {
 	## Slide Title
 
 	![Image](pictures/pic.png)
+
+	![Image with custom classes](pictures/pic2.png) .place .r .b
 
 	<p class="note">Some HTML</p>
 
@@ -164,11 +185,9 @@ You can highlight important parts of presentation using `@@text@@` (important) a
 ```
 
 
-## Release History
+## Changelog
 
-### 2013-02-18 v0.1.0
-
-* Grunt 0.4 support.
+The changelog can be found in the `Changelog.md` file.
 
 
 ---
