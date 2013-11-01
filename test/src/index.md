@@ -66,3 +66,9 @@ concat: {
 	@@}@@
 }
 ```
+
+!SLIDE
+
+## Image with classes
+
+![](pictures/pony.png) .place .r .b
