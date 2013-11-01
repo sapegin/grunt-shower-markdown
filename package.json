@@ -25,13 +25,14 @@
     "node": "*"
   },
   "dependencies": {
-    "marked": "0.2.x"
+    "marked": "~0.2.9"
   },
   "devDependencies": {
-    "grunt": "~0.4.0",
-    "grunt-contrib-jshint": "~0.1.1",
-    "grunt-contrib-nodeunit": "~0.1.2",
-    "grunt-contrib-clean": "~0.4.0"
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.7.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-mocha-test": "~0.7.0",
+    "matchdep": "~0.3.0"
   },
   "peerDependencies": {
     "grunt": "~0.4.0"
@@ -40,5 +41,13 @@
     "gruntplugin",
     "shower",
     "markdown"
-  ]
+  ],
+  "readme": "# Grunt task that generates Shower presentations from Markdown source\r\n\r\n## Installation\r\n\r\nThis plugin requires Grunt 0.4.\r\n\r\nInstall `grunt-shower-markdown`:\r\n\r\n```\r\nnpm install grunt-shower-markdown --save-dev\r\n```\r\n\r\nAdd somewhere in your `Gruntfile.js`:\r\n\r\n```javascript\r\ngrunt.loadNpmTasks('grunt-shower-markdown');\r\n```\r\n\r\nAdd a section named `shower` into your `Gruntfile.js` file. See Parameters section below for details.\r\n\r\n\r\n## Parameters\r\n\r\n### [title] {string} (default: first line of source file)\r\n\r\nTitle of presentation (used in `<title>` tag).\r\n\r\n### [src] {string} (default: `<target>.md`)\r\n\r\nPath of source Markdown file.\r\n\r\n### [dest] {string} (default: `<target>.html`)\r\n\r\nPath of result HTML file.\r\n\r\n### [lang] {string} (default: `en`)\r\n\r\nLanguage of presentation.\r\n\r\n### [theme] {string} (default: `themes/ribbon`)\r\n\r\nPath where theme of presentation is located.\r\n\r\n### [styles] {array|string}\r\n\r\nList of CSS files specific to your presentation.\r\n\r\n### [scripts] {array|string}\r\n\r\nList of JavaScript files specific to your presentation.\r\n\r\n### [progress] {string} (default: `true`)\r\n\r\nHides progress bar when `false`.\r\n\r\n### [footer] {string}\r\n\r\nAny HTML to put before `</body>`.\r\n\r\n## Config Example\r\n\r\n``` javascript\r\nmodule.exports = function(grunt) {\r\n\tgrunt.initConfig({\r\n\t\tshower: {\r\n\t\t\tindex: {\r\n\t\t\t\ttitle: 'Test presentation',\r\n\t\t\t\tsrc: 'src/index.md',\r\n\t\t\t\tstyles: 'src/styles.css'\r\n\t\t\t\tscripts: [\r\n\t\t\t\t\t'libs/highlight.js',\r\n\t\t\t\t\t'src/scripts.js'\r\n\t\t\t\t]\r\n\t\t\t}\r\n\t\t},\r\n\t\twatch: {\r\n\t\t\tshower: {\r\n\t\t\t\tfiles: 'src/*',\r\n\t\t\t\ttasks: 'shower'\r\n\t\t\t}\r\n\t\t}\r\n\t});\r\n\t\r\n\tgrunt.loadNpmTasks('grunt-shower-markdown');\r\n\t\r\n\tgrunt.registerTask('default', 'shower');\r\n};\t\t\r\n```\r\n\r\n\r\n## Presentation markup\r\n\r\n\t# Presentation Title\r\n\t\t\t\r\n\t[Author](http://sapegin.me) and any other content to show above slides.\r\n\r\n\t!SLIDE #SlideID class1 class2\r\n\r\n\t## Slide Title\r\n\r\n\t![Image](pictures/pic.png)\r\n\r\n\t<p class=\"note\">Some HTML</p>\r\n\r\n\t- List item one\r\n\t-? Two (delayed)\r\n\t-? Three (delayed)\r\n\r\n\t!SLIDE #Cover shoot\r\n\r\n\t## Hello world!\r\n\r\n\t!SLIDE\r\n\r\n\t## Code example\r\n\r\n\t```\r\n\t@@concat@@: {\r\n\t\tmain: {\r\n\t\t\ttext: @@@'Hello world'@@@\r\n\t\t}\r\n\t}\r\n\t```\r\n\r\n\r\n## Markdown extensions\r\n\r\ngrunt-shower-markdown uses [GitHub flavored Markdown](http://github.github.com/github-flavored-markdown/) with some extenstions.\r\n\r\n### Delayed lists\r\n\r\nIf you want to delay display of list items, put `?` after list marker:\r\n\r\n```\r\n- One\r\n-? Two (delayed)\r\n-? Three (delayed)\r\n```\r\n\r\n### Text highlighting\r\n\r\nYou can highlight important parts of presentation using `@@text@@` (important) and `@@@text@@@` (very important):\r\n\r\n```\r\n@@concat@@: {\r\n\tmain: {\r\n\t\ttext: @@@'Hello world'@@@\r\n\t}\r\n}\r\n```\r\n\r\n## Release History\r\n\r\n### 2013-02-18 v0.1.0\r\n\r\n* Grunt 0.4 support.\r\n\r\n\r\n---\r\n\r\n## License\r\n\r\nThe MIT License, see the included `License.md` file.\r\n",
+  "readmeFilename": "Readme.md",
+  "_id": "grunt-shower-markdown@0.1.0",
+  "dist": {
+    "shasum": "fc1632f9716854237be3a36f99f273e644aeda92"
+  },
+  "_from": "grunt-shower-markdown@",
+  "_resolved": "https://registry.npmjs.org/grunt-shower-markdown/-/grunt-shower-markdown-0.1.0.tgz"
 }
