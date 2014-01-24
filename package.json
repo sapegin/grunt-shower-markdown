@@ -25,13 +25,13 @@
     "node": "*"
   },
   "dependencies": {
-    "marked": "~0.2.9"
+    "marked": "~0.3.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.7.0",
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-clean": "~0.5.0",
-    "grunt-mocha-test": "~0.7.0",
+    "grunt-mocha-test": "~0.8.2",
     "matchdep": "~0.3.0"
   },
   "peerDependencies": {

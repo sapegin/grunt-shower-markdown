@@ -53,6 +53,8 @@ module.exports = function(grunt) {
 				.replace(/<pre>([\s\S]*)<\/pre>/g, _addCodeTags)  // Enable line numbering in code examples
 				.replace(/<pre><code class="lang-([^"]+)"/g, '<pre><code class="language-$1"')  // HTML5 class names
 				.replace(/<code><\/code>/g, '<code>&shy;</code>')  // Fix empty lines
+				.replace(/\s*<code>&shy;<\/code><\/pre>/g, '</pre>')  // Remove last empty line
+				.replace(/(<h\d) id="[^"]*">/g, '$1>')  // Remove IDs from headings
 			;
 
 			slides[index] = {
