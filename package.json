@@ -21,6 +21,9 @@
     }
   ],
   "main": "tasks/shower-markdown.js",
+  "scripts": {
+    "test": "grunt --stack"
+  },
   "engines": {
     "node": "*"
   },
