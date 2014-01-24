@@ -8,20 +8,20 @@
 module.exports = function(grunt) {
 	'use strict';
 
-	var fs = require('fs'),
-		path = require('path'),
-		marked = require('marked'),
-		_ = grunt.util._;
+	var fs = require('fs');
+	var path = require('path');
+	var marked = require('marked');
+	var _ = grunt.util._;
 
 	grunt.registerMultiTask('shower', 'Generates Shower presentations from Markdown source', function() {
-		var target = this.target,
-			options = this.data;
+		var target = this.target;
+		var options = this.data;
 
-		var srcFile = options.src ? options.src : target + '.md',
-			src = grunt.file.read(srcFile),
-			slides = src.split('!SLIDE'),
-			caption = marked(slides.shift()),  // Caption is a text above first !SLIDE
-			title = options.title;
+		var srcFile = options.src ? options.src : target + '.md';
+		var src = grunt.file.read(srcFile);
+		var slides = src.split('!SLIDE');
+		var caption = marked(slides.shift());  // Caption is a text above first !SLIDE
+		var title = options.title;
 
 		if (!options.title) {
 			// By default title is a first line of caption, with striped tags
@@ -30,10 +30,10 @@ module.exports = function(grunt) {
 
 		slides.forEach(function(source, index) {
 			// Slide metadata
-			var firstLineLength = source.indexOf('\n'),
-				info = source.substring(0, firstLineLength).trim(),
-				classes = info.split(' '),
-				id;
+			var firstLineLength = source.indexOf('\n');
+			var info = source.substring(0, firstLineLength).trim();
+			var classes = info.split(' ');
+			var id;
 			if (classes[0].charAt(0) === '#') {
 				id = classes.shift().substring(1);
 			}
@@ -75,9 +75,9 @@ module.exports = function(grunt) {
 			caption: caption,
 			slides: slides
 		};
-		var templateFile = path.join(__dirname, 'templates/presentation.html'),
-			template = fs.readFileSync(templateFile, 'utf8'),
-			html = grunt.template.process(template, {data: context});
+		var templateFile = path.join(__dirname, 'templates/presentation.html');
+		var template = fs.readFileSync(templateFile, 'utf8');
+		var html = grunt.template.process(template, {data: context});
 
 		var dest = options.dest ? options.dest : target + '.html';
 		grunt.file.write(dest, html);

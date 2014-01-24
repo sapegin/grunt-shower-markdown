@@ -33,12 +33,16 @@ module.exports = function(grunt) {
 				undef: true
 			}
 		},
+		jscs: {
+			all: ['tasks/*.js']
+		},		
 		clean: ['test/tmp']
 	});
 
 	grunt.loadTasks('tasks');
 
 	grunt.registerTask('test', ['mochaTest']);
-	grunt.registerTask('default', ['jshint', 'clean', 'shower', 'test', 'clean']);
+	grunt.registerTask('default', ['jshint', 'jscs', 'clean', 'shower', 'test', 'clean']);
+	grunt.registerTask('build', ['default']);
 
 };
