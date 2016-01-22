@@ -1,7 +1,7 @@
 # Grunt task that generates Shower presentations from Markdown source
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 [![Build Status](https://travis-ci.org/sapegin/grunt-shower-markdown.png)](https://travis-ci.org/sapegin/grunt-shower-markdown)
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 ## Installation
 
